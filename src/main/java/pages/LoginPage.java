@@ -23,5 +23,10 @@ public class LoginPage {
         return this;
     }
 
+    public LoginPage pressLoginButton() {
+        page.click(buttonLogin);
+        return this;
+    }
+
 
 }

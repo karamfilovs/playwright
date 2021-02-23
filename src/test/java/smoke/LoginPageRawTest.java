@@ -6,11 +6,9 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 
-public class LoginTest
+public class LoginPageRawTest
 {
     @Test
     public void canLoginWithValidCreds()
@@ -20,11 +18,11 @@ public class LoginTest
                 .launch(new BrowserType.LaunchOptions().withHeadless(false));
 
         Page page = browser.newPage();
+        page.setViewportSize(1920, 1080);
         page.navigate("https://st2016.inv.bg");
         page.fill("#loginusername", "karamfilovs@gmail.com");
         page.fill("#loginpassword", "123456");
         page.click("#loginsubmit");
 
-        assertThat(page.isVisible("button#createRoom"), is(true));
     }
 }
