@@ -15,15 +15,14 @@ public class BasePage implements IPage {
 
 
     @Override
-    public void click(String locator) {
-
-        driver.findElement(By.cssSelector(locator)).click();
+    public void click(String selector) {
+        driver.findElement(By.cssSelector(selector)).click();
 
     }
 
     @Override
-    public void typeText(String locator, String text) {
-        WebElement element = driver.findElement(By.cssSelector(locator));
+    public void typeText(String selector, String text) {
+        WebElement element = driver.findElement(By.cssSelector(selector));
         element.clear();
         element.sendKeys(text);
     }
@@ -34,7 +33,8 @@ public class BasePage implements IPage {
     }
 
     @Override
-    public String getText(String locator) {
-        return driver.findElement(By.cssSelector(locator)).getText().trim();
+    public String getText(String selector) {
+
+        return driver.findElement(By.cssSelector(selector)).getText().trim();
     }
 }

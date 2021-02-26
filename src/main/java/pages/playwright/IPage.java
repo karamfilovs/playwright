@@ -1,13 +1,13 @@
 package pages.playwright;
 
 public interface IPage {
-    static final String URL = null;
-    static final String TITLE = null;
+    static final String URL = "";
+    static final String TITLE = "";
 
-    void click (String locator);
-    void typeText(String text, String locator);
+    void click (String selector);
+    void typeText(String text, String selector);
     void navigateTo(String url);
-    String getText(String locator);
+    String getText(String selector);
 
 }
 

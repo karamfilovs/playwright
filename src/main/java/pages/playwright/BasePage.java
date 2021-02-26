@@ -2,22 +2,22 @@ package pages.playwright;
 
 import com.microsoft.playwright.Page;
 
-public  class BasePage implements IPage {
+public class BasePage implements IPage {
     protected Page page;
 
-    public BasePage(Page page){
+    public BasePage(Page page) {
         this.page = page;
     }
 
     @Override
-    public void click(String locator) {
-        page.click(locator);
+    public void click(String selector) {
+        page.click(selector);
 
     }
 
     @Override
-    public void typeText(String locator, String text) {
-        page.fill(locator, text);
+    public void typeText(String selector, String text) {
+        page.fill(selector, text);
 
     }
 
@@ -27,8 +27,8 @@ public  class BasePage implements IPage {
     }
 
     @Override
-    public String getText(String locator) {
-        return page.textContent(locator);
+    public String getText(String selector) {
+        return page.textContent(selector);
     }
 
 

@@ -3,8 +3,8 @@ package pages.playwright;
 import com.microsoft.playwright.Page;
 
 public class HomePage extends BasePage {
-    private String url = "/home";
-    private String pageTitle = "/home";
+    private String URL = "/home";
+    private String PAGE_TITLE = "home";
     private String userPanel = "#userpanel";
 
 
