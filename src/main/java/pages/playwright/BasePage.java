@@ -11,12 +11,14 @@ public class BasePage implements IPage {
 
     @Override
     public void click(String selector) {
+        waitForVisibilityOf(selector);
         page.click(selector);
 
     }
 
     @Override
     public void typeText(String selector, String text) {
+        waitForVisibilityOf(selector);
         page.fill(selector, text);
 
     }
@@ -27,9 +29,15 @@ public class BasePage implements IPage {
     }
 
     @Override
+    public void waitForVisibilityOf(String selector) {
+        page.waitForSelector(selector);
+    }
+
+    @Override
     public String getText(String selector) {
         return page.textContent(selector);
     }
+
 
 
 }

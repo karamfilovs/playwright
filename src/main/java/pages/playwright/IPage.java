@@ -7,6 +7,7 @@ public interface IPage {
     void click (String selector);
     void typeText(String text, String selector);
     void navigateTo(String url);
+    void waitForVisibilityOf(String selector);
     String getText(String selector);
 
 }
