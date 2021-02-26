@@ -6,20 +6,22 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import pages.playwright.App;
 
-public class TestSetup {
-
+public class TestSetupPlayWright {
+    protected App app;
+    private static final String BASE_URL = "https://st2016.inv.bg";
     private Browser browser;
-    protected Page page;
+    private Page page;
 
     @BeforeEach
     public void setUp() {
         browser = Playwright.create()
                 .chromium()
                 .launch(new BrowserType.LaunchOptions().withHeadless(false));
-        
         page = browser.newPage();
-        page.navigate("https://st2016.inv.bg");
+        page.navigate(BASE_URL);
+        app = new App(page);
     }
 
     @AfterEach
