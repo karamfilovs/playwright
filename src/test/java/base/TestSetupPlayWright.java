@@ -18,7 +18,7 @@ public class TestSetupPlayWright {
     public void setUp() {
         browser = Playwright.create()
                 .chromium()
-                .launch(new BrowserType.LaunchOptions().withHeadless(false));
+                .launch(new BrowserType.LaunchOptions().withHeadless(true));
         page = browser.newPage();
         page.navigate(BASE_URL);
         app = new App(page);
