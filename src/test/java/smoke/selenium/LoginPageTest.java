@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 
 public class LoginPageTest extends TestSetupSelenium {
-    @Disabled
+  
     @DisplayName("Can login with valid credentials - Selenium")
     public void canLoginWithValidCredentials() {
         app.loginPage
