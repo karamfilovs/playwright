@@ -16,6 +16,45 @@ public class LoginPageTest extends TestSetupPlayWright {
                 .populatePassword("123456")
                 .pressLoginButton();
         Assertions.assertEquals("karamfilovs@gmail.com", app.homePage.getUserPanelText());
+    }
 
+    @Test
+    @DisplayName("Can login with valid credentials - Playwright2")
+    public void canLoginWithValidCredentials2() {
+        app.loginPage
+                .populateUsername("karamfilovs@gmail.com")
+                .populatePassword("123456")
+                .pressLoginButton();
+        Assertions.assertEquals("karamfilovs@gmail.com", app.homePage.getUserPanelText());
+    }
+
+    @Test
+    @DisplayName("Can login with valid credentials - Playwright3")
+    public void canLoginWithValidCredentials3() {
+        app.loginPage
+                .populateUsername("karamfilovs@gmail.com")
+                .populatePassword("123456")
+                .pressLoginButton();
+        Assertions.assertEquals("karamfilovs@gmail.com", app.homePage.getUserPanelText());
+    }
+
+    @Test
+    @DisplayName("Can login with valid credentials - Playwright4")
+    public void canLoginWithValidCredentials4() {
+        app.loginPage
+                .populateUsername("karamfilovs@gmail.com")
+                .populatePassword("123456")
+                .pressLoginButton();
+        Assertions.assertEquals("karamfilovs@gmail.com", app.homePage.getUserPanelText());
+    }
+
+    @Test
+    @DisplayName("Can login with valid credentials - Playwright5")
+    public void canLoginWithValidCredentials5() {
+        app.loginPage
+                .populateUsername("karamfilovs@gmail.com")
+                .populatePassword("123456")
+                .pressLoginButton();
+        Assertions.assertEquals("karamfilovs@gmail.com", app.homePage.getUserPanelText());
     }
 }
