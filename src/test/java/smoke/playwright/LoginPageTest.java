@@ -52,7 +52,7 @@ public class LoginPageTest extends TestSetupPlayWright {
     @DisplayName("Can login with valid credentials - Playwright5")
     public void canLoginWithValidCredentials5() {
         app.loginPage
-                .populateUsername("karamfilov@gmail.com")
+                .populateUsername("karamfilovs@gmail.com")
                 .populatePassword("123456")
                 .pressLoginButton();
         Assertions.assertEquals("karamfilovs@gmail.com", app.homePage.getUserPanelText());
