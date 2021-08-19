@@ -5,7 +5,8 @@ import com.microsoft.playwright.Page;
 public class HomePage extends BasePage {
     private String URL = "/home";
     private String PAGE_TITLE = "home";
-    private String userPanel = "#userpanel";
+    private String userPanelSelector = "#userpanel";
+    private String logoutLinkSelector = "//a[@class='selenium-button-logout button-logout']";
 
 
     public HomePage(Page page) {
@@ -13,8 +14,13 @@ public class HomePage extends BasePage {
     }
 
     public String getUserPanelText(){
-        return getText(userPanel).trim();
+        return getText(userPanelSelector).trim();
     }
 
+    public HomePage logout() {
+        click(userPanelSelector);
+        click(logoutLinkSelector);
+        return this;
+    }
 
 }
