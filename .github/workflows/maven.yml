@@ -23,6 +23,7 @@ jobs:
         distribution: 'adopt'
     - name: Run e2e tests
       run: mvn clean test -Dheadless=true
+      
     - uses: dorny/test-reporter@v1.4.3
     - name: Test Reporter
       with:
