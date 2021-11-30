@@ -21,7 +21,11 @@ jobs:
           java-version: '15'
           distribution: 'adopt'
       - name: Run e2e tests
-        run: mvn clean test -Dheadless=true
+        run: mvn clean compile
+      - uses: actions/upload-artifact@master
+        with:
+            name: maven artifacts
+            path: target/
  
 
   test:
@@ -35,8 +39,12 @@ jobs:
       with:
         java-version: '15'
         distribution: 'adopt'
+    - uses: actions/download-artifact@master
+      with:
+          name: maven target folder
+          path: target
     - name: Run e2e tests
-      run: mvn clean test -Dheadless=true
+      run: mvn surefire:test -Dheadless=true
     - name: Test Reporter
       uses: dorny/test-reporter@v1.4.3
       with:
