@@ -41,7 +41,7 @@ jobs:
         distribution: 'adopt'
     - uses: actions/download-artifact@master
       with:
-          name: maven target folder
+          name: maven artifacts
           path: target
     - name: Run e2e tests
       run: mvn surefire:test -Dheadless=true
